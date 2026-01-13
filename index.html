@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mulisa Construction | Ujenzi Bora Tanzania - Chanika, Dar es Salaam</title>
-    <meta name="description" content="Wataalam wa ujenzi Tanzania. Huduma za PVA skimming, ujenzi majengo, gypsum designs, tiles installation, electrical works na TV showcase designs.">
+    <title>MULISA CONSTRUCTION | UJENZI BORA TANZANIA - CHANIKA, DAR ES SALAAM</title>
+    <meta name="description" content="WATALAM WA UJENZI TANZANIA. HUDUMA ZA PVA SKIMMING, UJENZI MAJENGO, GYPSUM DESIGNS, TILES INSTALLATION, ELECTRICAL WORKS NA TV SHOWCASE DESIGNS.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -272,7 +272,7 @@
             animation-name: float;
         }
 
-        /* ===== LOADING ANIMATION YA HARAKA ===== */
+        /* ===== LOADING ANIMATION WITH LOGO AND PERCENTAGE ===== */
         .loader-wrapper {
             position: fixed;
             top: 0;
@@ -285,17 +285,55 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            border-top-color: var(--secondary);
-            animation: spin 0.8s linear infinite;
-            margin-bottom: 15px;
+        .loader-logo {
+            height: 120px;
+            width: auto;
+            margin-bottom: 40px;
+            animation: pulse 1.5s infinite;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .loader-progress-container {
+            width: 300px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .loader-progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .loader-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .loader-percentage {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .loader-text {
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-top: 10px;
         }
 
         /* ===== HEADER & NAVIGATION ===== */
@@ -1454,8 +1492,16 @@
 <body>
     <!-- Loading Screen - HARAKA -->
     <div class="loader-wrapper" id="loader">
-        <div class="loader"></div>
-        <p style="color: white; font-weight: 700; font-size: 1.2rem; margin-top: 15px;">Inapakia...</p>
+        <img src="logo.png" alt="MULISA CONSTRUCTION" class="loader-logo" onerror="this.src='https://via.placeholder.com/120x120/1a365d/ffffff?text=MULISA'">
+        
+        <div class="loader-progress-container">
+            <div class="loader-percentage" id="percentage">0%</div>
+            <div class="loader-progress-bar">
+                <div class="loader-progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        
+        <p class="loader-text">INAPAKIA MULISA CONSTRUCTION...</p>
     </div>
 
     <!-- Vifaa vya Ujenzi vinavyocheza -->
@@ -1471,25 +1517,25 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo-container">
-                    <img src="logo.png" alt="Mulisa Construction Logo" class="logo-img">
+                    <img src="logo.png" alt="MULISA CONSTRUCTION LOGO" class="logo-img">
                     <div class="logo-text">
-                        <div class="company-name">Mulisa Construction</div>
-                        <div class="tagline">Ubora Katika Kila Kitu</div>
+                        <div class="company-name">MULISA CONSTRUCTION</div>
+                        <div class="tagline">UBORA KATIKA KILA KITU</div>
                     </div>
                 </div>
 
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Nyumbani</a></li>
-                    <li><a href="#services" class="nav-link"><i class="fas fa-tools"></i> Huduma</a></li>
-                    <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-                    <li><a href="#projects" class="nav-link"><i class="fas fa-images"></i> Miradi</a></li>
-                    <li><a href="#testimonials" class="nav-link"><i class="fas fa-star"></i> Maoni</a></li>
-                    <li><a href="#contact" class="nav-link"><i class="fas fa-phone-alt"></i> Wasiliana</a></li>
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> NYUMBANI</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-tools"></i> HUDUMA</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> KUHUSU SISI</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-images"></i> MIRADI</a></li>
+                    <li><a href="#testimonials" class="nav-link"><i class="fas fa-star"></i> MAONI</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-phone-alt"></i> WASILIANA</a></li>
                 </ul>
 
                 <div class="nav-cta">
                     <a href="tel:+255786463020" class="btn btn-secondary">
-                        <i class="fas fa-phone-alt"></i> Piga Sasa
+                        <i class="fas fa-phone-alt"></i> PIGA SASA
                     </a>
                     <button class="hamburger" id="hamburger">
                         <span></span>
@@ -1505,48 +1551,48 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Wataalam wa Ujenzi wa Kina Tanzania</h1>
+                <h1>WATALAM WA UJENZI WA KINA TANZANIA</h1>
                 <p>Tunajenga maisha bora kupitia ujenzi wa ubora. Tumejenga uaminifu kwa miaka kwa kutoa huduma bora za ujenzi, ukarabati na upambaji wa nyumba na majengo ya biashara.</p>
                 
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-calendar-check"></i> Pata Makadirio
+                        <i class="fas fa-calendar-check"></i> PATA MAKADIRIO
                     </a>
                     <a href="https://wa.me/255754616660" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Tuwasiliane WhatsApp
+                        <i class="fab fa-whatsapp"></i> TUWASILIANE WHATSAPP
                     </a>
                 </div>
                 
                 <!-- Sliding Text Auto -->
                 <div class="sliding-text-container">
                     <div class="sliding-text">
-                        <span><i class="fas fa-check-circle"></i> Ujenzi wa Nyumba</span>
-                        <span><i class="fas fa-check-circle"></i> Ukarabati wa Majengo</span>
-                        <span><i class="fas fa-check-circle"></i> Gypsum Designs</span>
-                        <span><i class="fas fa-check-circle"></i> Tiles Installation</span>
-                        <span><i class="fas fa-check-circle"></i> Umeme wa Nyumba</span>
-                        <span><i class="fas fa-check-circle"></i> TV Showcase</span>
-                        <span><i class="fas fa-check-circle"></i> PVA Skimming</span>
-                        <span><i class="fas fa-check-circle"></i> Uboreshaji wa Ndani</span>
+                        <span><i class="fas fa-check-circle"></i> UJENZI WA NYUMBA</span>
+                        <span><i class="fas fa-check-circle"></i> UKARABATI WA MAJENGO</span>
+                        <span><i class="fas fa-check-circle"></i> GYPSUM DESIGNS</span>
+                        <span><i class="fas fa-check-circle"></i> TILES INSTALLATION</span>
+                        <span><i class="fas fa-check-circle"></i> UMEME WA NYUMBA</span>
+                        <span><i class="fas fa-check-circle"></i> TV SHOWCASE</span>
+                        <span><i class="fas fa-check-circle"></i> PVA SKIMMING</span>
+                        <span><i class="fas fa-check-circle"></i> UBO RESHAJI WA NDANI</span>
                     </div>
                 </div>
                 
                 <div class="stats-container">
                     <div class="stat-item">
                         <div class="stat-number">50+</div>
-                        <div class="stat-text">Miradi Imekamilika</div>
+                        <div class="stat-text">MIRADI IMEKAMILIKA</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
-                        <div class="stat-text">Miaka ya Uzoefu</div>
+                        <div class="stat-text">miaka ya uzoefu</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">100%</div>
-                        <div class="stat-text">Wateja Walioridhika</div>
+                        <div class="stat-text">WATEJA WALIORIDHIKA</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">24/7</div>
-                        <div class="stat-text">Huduma ya Dharura</div>
+                        <div class="stat-text">HUDUMA YA DHARURA</div>
                     </div>
                 </div>
             </div>
@@ -1557,7 +1603,7 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Huduma Zetu Bora</h2>
+                <h2>HUDUMA ZETU BORA</h2>
                 <p>Kila huduma inafanywa kwa ustadi wa hali ya juu na dhana ya kisasa</p>
             </div>
             
@@ -1569,7 +1615,7 @@
                         <div class="service-icon">
                             <i class="fas fa-paint-roller"></i>
                         </div>
-                        <h3>PVA Skimming</h3>
+                        <h3>PVA SKIMMING</h3>
                         <p>Ukarabati wa kuta kwa Polyvinyl Alcohol kwa kumaliza laini ambayo huruhusu rangi kushika vizuri na kudumu kwa muda mrefu.</p>
                         <ul class="service-features">
                             <li style="--feature-delay: 1;"><i class="fas fa-check-circle"></i> Kuta laini bila mapundutu</li>
@@ -1587,7 +1633,7 @@
                         <div class="service-icon">
                             <i class="fas fa-hard-hat"></i>
                         </div>
-                        <h3>Ujenzi wa Majengo</h3>
+                        <h3>UJENZI WA MAJENGO</h3>
                         <p>Ujenzi wa nyumba, ofisi na majengo ya biashara kutoka msingi hadi ukamilifu kwa kufuata kanuni na viwango vya usalama.</p>
                         <ul class="service-features">
                             <li style="--feature-delay: 1;"><i class="fas fa-check-circle"></i> Ujenzi wa nyumba mpya</li>
@@ -1605,7 +1651,7 @@
                         <div class="service-icon">
                             <i class="fas fa-gem"></i>
                         </div>
-                        <h3>Gypsum Designs</h3>
+                        <h3>GYPSUM DESIGNS</h3>
                         <p>Ubunifu wa kisasa wa dari, cornices, na mapambo ya kuta kwa gypsum kwa muonekano wa kifahari na wa kisasa.</p>
                         <ul class="service-features">
                             <li style="--feature-delay: 1;"><i class="fas fa-check-circle"></i> Dari za gypsum</li>
@@ -1623,7 +1669,7 @@
                         <div class="service-icon">
                             <i class="fas fa-tv"></i>
                         </div>
-                        <h3>TV Showcase Designs</h3>
+                        <h3>TV SHOWCASE DESIGNS</h3>
                         <p>Ujenzi wa rack za TV, viti vya kuangalia, na mifumo ya maonyesho ya televisheni kwa ubunifu wa kisasa.</p>
                         <ul class="service-features">
                             <li style="--feature-delay: 1;"><i class="fas fa-check-circle"></i> Rack za TV za kisasa</li>
@@ -1641,7 +1687,7 @@
                         <div class="service-icon">
                             <i class="fas fa-th-large"></i>
                         </div>
-                        <h3>Tiles Installation</h3>
+                        <h3>TILES INSTALLATION</h3>
                         <p>Ufungaji wa tiles za sakafu na kuta kwa ustadi, usahihi na ubora wa juu kutumia vifaa bora na ya kisasa.</p>
                         <ul class="service-features">
                             <li style="--feature-delay: 1;"><i class="fas fa-check-circle"></i> Sakafu za tiles</li>
@@ -1659,7 +1705,7 @@
                         <div class="service-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3>Electrical Installation</h3>
+                        <h3>ELECTRICAL INSTALLATION</h3>
                         <p>Ufungaji wa umeme wa nyumba na biashara kwa kufuata viwango vya usalama na utendaji bora.</p>
                         <ul class="service-features">
                             <li style="--feature-delay: 1;"><i class="fas fa-check-circle"></i> Wiring mpya ya nyumba</li>
@@ -1677,14 +1723,14 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2>Kuhusu Mulisa Construction</h2>
+                <h2>KUHUSU MULISA CONSTRUCTION</h2>
                 <p>Kampuni ya ujenzi iliyoko Chanika, Dar es Salaam yenye kujikita katika ubora, uaminifu na utimilifu wa kazi</p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Uzoefu wa Miaka katika Ujenzi Tanzania</h3>
-                    <p><strong>Mulisa Construction</strong> imekuwa ikitoa huduma bora za ujenzi na ukarabati kwa zaidi ya miaka 15 nchini Tanzania. Tunajivunia uhusiano wa karibu na wateja wetu na ubora wa kazi tunazofanya.</p>
+                    <h3>UZOEFU WA MIAKA KATIKA UJENZI TANZANIA</h3>
+                    <p><strong>MULISA CONSTRUCTION</strong> imekuwa ikitoa huduma bora za ujenzi na ukarabati kwa zaidi ya miaka 15 nchini Tanzania. Tunajivunia uhusiano wa karibu na wateja wetu na ubora wa kazi tunazofanya.</p>
                     <p>Tunajikita katika kutoa suluhisho kamili za ujenzi, kuanzia ushauri wa awali, kupitia ujenzi, hadi ukamilifu wa mradi. Uzoefu wetu upana unajumuisha ujenzi wa nyumba za makazi, ofisi, na majengo ya biashara.</p>
                     
                     <div class="features-grid">
@@ -1693,7 +1739,7 @@
                                 <i class="fas fa-award"></i>
                             </div>
                             <div>
-                                <h4>Ubora wa Hali ya Juu</h4>
+                                <h4>UBORA WA HALI YA JUU</h4>
                                 <p>Tunatumia vifaa bora na wataalam wenye ujuzi</p>
                             </div>
                         </div>
@@ -1702,7 +1748,7 @@
                                 <i class="fas fa-clock"></i>
                             </div>
                             <div>
-                                <h4>Utekelezaji wa Wakati</h4>
+                                <h4>UTEKELEZAJI WA WAKATI</h4>
                                 <p>Tunakamilisha miradi kwa wakati uliokusudiwa</p>
                             </div>
                         </div>
@@ -1711,7 +1757,7 @@
                                 <i class="fas fa-handshake"></i>
                             </div>
                             <div>
-                                <h4>Uaminifu na Uwazi</h4>
+                                <h4>UAMINIFU NA UWAZI</h4>
                                 <p>Kushirikiana kwa uwazi na wateja wote</p>
                             </div>
                         </div>
@@ -1720,7 +1766,7 @@
                                 <i class="fas fa-money-bill-wave"></i>
                             </div>
                             <div>
-                                <h4>Bei Nafuu</h4>
+                                <h4>BEI NAFUU</h4>
                                 <p>Huduma bora kwa bei nafuu</p>
                             </div>
                         </div>
@@ -1731,7 +1777,7 @@
                     <img src="about-us.jpg" alt="Timu ya Mulisa Construction">
                     <div class="experience-badge">
                         <div class="years">15+</div>
-                        <div class="text">Miaka ya Uzoefu</div>
+                        <div class="text">MIAKA YA UZOEFU</div>
                     </div>
                 </div>
             </div>
@@ -1742,16 +1788,16 @@
     <section id="projects" class="gallery">
         <div class="container">
             <div class="section-header">
-                <h2>Miradi Yetu ya Ujenzi</h2>
+                <h2>MIRADI YETU YA UJENZI</h2>
                 <p>Angalia baadhi ya miradi tuliyoifanya na kujivunia</p>
             </div>
             
             <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">Miradi Yote</button>
-                <button class="filter-btn" data-filter="residential">Nyumba za Makazi</button>
-                <button class="filter-btn" data-filter="commercial">Majengo ya Biashara</button>
-                <button class="filter-btn" data-filter="interior">Uboreshaji wa Ndani</button>
-                <button class="filter-btn" data-filter="renovation">Ukarabati</button>
+                <button class="filter-btn active" data-filter="all">MIRADI YOTE</button>
+                <button class="filter-btn" data-filter="residential">NYUMBA ZA MAKAZI</button>
+                <button class="filter-btn" data-filter="commercial">MAJENGO YA BIASHARA</button>
+                <button class="filter-btn" data-filter="interior">UBORESHAJI WA NDANI</button>
+                <button class="filter-btn" data-filter="renovation">UKARABATI</button>
             </div>
             
             <div class="gallery-grid">
@@ -1759,9 +1805,9 @@
                 <div class="project-card" data-category="residential" style="--delay: 1;">
                     <img src="nyumba-ya-familia.jpg" alt="Nyumba ya Familia" class="project-img">
                     <div class="project-overlay">
-                        <h4>Nyumba ya Familia</h4>
+                        <h4>NYUMBA YA FAMILIA</h4>
                         <p>Ujenzi wa nyumba ya familia 3-bedroom Chanika</p>
-                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Angalia Zaidi</a>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">ANGALIA ZAIDI</a>
                     </div>
                 </div>
                 
@@ -1769,9 +1815,9 @@
                 <div class="project-card" data-category="commercial" style="--delay: 2;">
                     <img src="ofisi-ya-biashara.jpg" alt="Ofisi ya Biashara" class="project-img">
                     <div class="project-overlay">
-                        <h4>Ofisi ya Biashara</h4>
+                        <h4>OFISI YA BIASHARA</h4>
                         <p>Ujenzi wa ofisi ya biashara Tabata</p>
-                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Angalia Zaidi</a>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">ANGALIA ZAIDI</a>
                     </div>
                 </div>
                 
@@ -1779,9 +1825,9 @@
                 <div class="project-card" data-category="interior" style="--delay: 3;">
                     <img src="gypsum-ceiling.jpg" alt="Gypsum Ceiling" class="project-img">
                     <div class="project-overlay">
-                        <h4>Dari ya Gypsum</h4>
+                        <h4>DARI YA GYPSUM</h4>
                         <p>Ufungaji wa dari ya gypsum na taa za kisasa</p>
-                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Angalia Zaidi</a>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">ANGALIA ZAIDI</a>
                     </div>
                 </div>
                 
@@ -1789,9 +1835,9 @@
                 <div class="project-card" data-category="renovation" style="--delay: 4;">
                     <img src="ukarabati-nyumba.jpg" alt="Ukarabati wa Nyumba" class="project-img">
                     <div class="project-overlay">
-                        <h4>Ukarabati wa Nyumba</h4>
+                        <h4>UKARABATI WA NYUMBA</h4>
                         <p>Ukarabati na uboreshaji wa nyumba ya miaka 20</p>
-                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Angalia Zaidi</a>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">ANGALIA ZAIDI</a>
                     </div>
                 </div>
                 
@@ -1799,9 +1845,9 @@
                 <div class="project-card" data-category="residential" style="--delay: 5;">
                     <img src="tv-showcase-project.jpg" alt="TV Showcase" class="project-img">
                     <div class="project-overlay">
-                        <h4>TV Showcase</h4>
+                        <h4>TV SHOWCASE</h4>
                         <p>Ubunifu wa rack ya TV na viti vya kuangalia</p>
-                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Angalia Zaidi</a>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">ANGALIA ZAIDI</a>
                     </div>
                 </div>
                 
@@ -1809,16 +1855,16 @@
                 <div class="project-card" data-category="interior" style="--delay: 6;">
                     <img src="tiles-project.jpg" alt="Ufungaji wa Tiles" class="project-img">
                     <div class="project-overlay">
-                        <h4>Ufungaji wa Tiles</h4>
+                        <h4>UFUNGAJI WA TILES</h4>
                         <p>Ufungaji wa tiles za kisasa za sakafu na kuta</p>
-                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">Angalia Zaidi</a>
+                        <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 1rem;">ANGALIA ZAIDI</a>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 60px;">
                 <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-images"></i> Tazama Miradi Zaidi
+                    <i class="fas fa-images"></i> TAZAMA MIRADI ZAIDI
                 </a>
             </div>
         </div>
@@ -1828,7 +1874,7 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Wateja Wanachosema</h2>
+                <h2>WATEJA WANACHOSEMA</h2>
                 <p>Maoni ya wateja walioridhika na huduma zetu za ujenzi</p>
             </div>
             
@@ -1839,7 +1885,7 @@
                     <div class="testimonial-author">
                         <img src="john-michael.jpg" alt="John Michael" class="author-img">
                         <div class="author-info">
-                            <h4>John Michael</h4>
+                            <h4>JOHN MICHAEL</h4>
                             <p>Mwenye Nyumba, Chanika</p>
                         </div>
                     </div>
@@ -1851,7 +1897,7 @@
                     <div class="testimonial-author">
                         <img src="sarah-juma.jpg" alt="Sarah Juma" class="author-img">
                         <div class="author-info">
-                            <h4>Sarah Juma</h4>
+                            <h4>SARAH JUMA</h4>
                             <p>Mkurugenzi, Tabata</p>
                         </div>
                     </div>
@@ -1863,7 +1909,7 @@
                     <div class="testimonial-author">
                         <img src="robert-ally.jpg" alt="Robert Ally" class="author-img">
                         <div class="author-info">
-                            <h4>Robert Ally</h4>
+                            <h4>ROBERT ALLY</h4>
                             <p>Mwanabiashara, Dar es Salaam</p>
                         </div>
                     </div>
@@ -1876,13 +1922,13 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Wasiliana Nasi</h2>
+                <h2>WASILIANA NASI</h2>
                 <p>Tupo tayari kukusikiliza na kukupa ushauri wa bure kuhusu mradi wako wa ujenzi</p>
             </div>
             
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Tupigie Simu Au Tuma Ujumbe</h3>
+                    <h3>TUPIGIE SIMU AU TUMA UJUMBE</h3>
                     
                     <div class="contact-methods">
                         <div class="contact-method" style="--delay: 1;">
@@ -1890,7 +1936,7 @@
                                 <i class="fab fa-whatsapp"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>WhatsApp</h4>
+                                <h4>WHATSAPP</h4>
                                 <a href="https://wa.me/255754616660" target="_blank">0754 616 660</a>
                                 <p>Tuma ujumbe wa maandishi au piga kupitia WhatsApp</p>
                             </div>
@@ -1901,7 +1947,7 @@
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>Simu ya Moja Kwa Moja</h4>
+                                <h4>SIMU YA MOJA KWA MOJA</h4>
                                 <a href="tel:+255786463020">0786 463 020</a>
                                 <p>Piga kwa maelezo zaidi, ushauri au makadirio</p>
                             </div>
@@ -1912,7 +1958,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-details">
-                                <h4>Barua Pepe</h4>
+                                <h4>BARUA PEPE</h4>
                                 <a href="mailto:info@mulisaconstruction.com">info@mulisaconstruction.com</a>
                                 <p>Tuma barua pepe kwa ombi lolote au ushauri</p>
                             </div>
@@ -1920,54 +1966,54 @@
                     </div>
                     
                     <div class="business-hours">
-                        <h4><i class="fas fa-clock"></i> Muda wa Kazi</h4>
+                        <h4><i class="fas fa-clock"></i> MUDA WA KAZI</h4>
                         <p><strong>Jumatatu - Ijumaa:</strong> 8:00 asubuhi - 6:00 jioni</p>
                         <p><strong>Jumamosi:</strong> 9:00 asubuhi - 4:00 jioni</p>
                         <p><strong>Jumapili:</strong> Kwa mikutano pekee</p>
-                        <p style="margin-top: 20px; font-size: 1.05rem; opacity: 0.95;"><i class="fas fa-map-marker-alt"></i> <strong>Mahali:</strong> Chanika, Dar es Salaam, Tanzania</p>
+                        <p style="margin-top: 20px; font-size: 1.05rem; opacity: 0.95;"><i class="fas fa-map-marker-alt"></i> <strong>MAHALI:</strong> Chanika, Dar es Salaam, Tanzania</p>
                     </div>
                 </div>
                 
                 <div class="contact-form-container">
-                    <h3>Tuma Ujumbe Wa Ombi</h3>
+                    <h3>TUMA UJUMBE WA OMBI</h3>
                     <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group" style="--delay: 1;">
-                                <label for="name">Jina Kamili *</label>
+                                <label for="name">JINA KAMILI *</label>
                                 <input type="text" id="name" class="form-control" required>
                             </div>
                             <div class="form-group" style="--delay: 2;">
-                                <label for="phone">Namba ya Simu *</label>
+                                <label for="phone">NAMBA YA SIMU *</label>
                                 <input type="tel" id="phone" class="form-control" required>
                             </div>
                         </div>
                         
                         <div class="form-group" style="--delay: 3;">
-                            <label for="email">Barua Pepe</label>
+                            <label for="email">BARUA PEPE</label>
                             <input type="email" id="email" class="form-control">
                         </div>
                         
                         <div class="form-group" style="--delay: 4;">
-                            <label for="service">Huduma Unayohitaji *</label>
+                            <label for="service">HUDUMA UNAYOHITAJI *</label>
                             <select id="service" class="form-control" required>
-                                <option value="">Chagua Huduma</option>
-                                <option value="pva">PVA Skimming</option>
-                                <option value="construction">Ujenzi wa Majengo</option>
-                                <option value="gypsum">Gypsum Designs</option>
-                                <option value="tv">TV Showcase Designs</option>
-                                <option value="tiles">Tiles Installation</option>
-                                <option value="electrical">Electrical Installation</option>
-                                <option value="other">Nyingine</option>
+                                <option value="">CHAGUA HUDUMA</option>
+                                <option value="pva">PVA SKIMMING</option>
+                                <option value="construction">UJENZI WA MAJENGO</option>
+                                <option value="gypsum">GYPSUM DESIGNS</option>
+                                <option value="tv">TV SHOWCASE DESIGNS</option>
+                                <option value="tiles">TILES INSTALLATION</option>
+                                <option value="electrical">ELECTRICAL INSTALLATION</option>
+                                <option value="other">NYINGINE</option>
                             </select>
                         </div>
                         
                         <div class="form-group" style="--delay: 5;">
-                            <label for="message">Maelezo ya Ziada *</label>
+                            <label for="message">MAELEZO YA ZIADA *</label>
                             <textarea id="message" class="form-control" required placeholder="Eleza mradi wako, ukubwa, mahali, na muda unakotaka kuanzisha..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; --delay: 6;">
-                            <i class="fas fa-paper-plane"></i> Tuma Ombi Lako
+                            <i class="fas fa-paper-plane"></i> TUMA OMBI LAKO
                         </button>
                     </form>
                 </div>
@@ -1980,8 +2026,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="logo.png" alt="Mulisa Construction">
-                    <h3>Mulisa Construction</h3>
+                    <img src="logo.png" alt="MULISA CONSTRUCTION">
+                    <h3>MULISA CONSTRUCTION</h3>
                     <p>Wataalam wa ujenzi na ukarabati wa nyumba na majengo ya biashara nchini Tanzania.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1992,29 +2038,29 @@
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Unganisha Nasi</h4>
+                    <h4>UNGANISHA NASI</h4>
                     <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Nyumbani</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Huduma Zetu</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Kuhusu Sisi</a></li>
-                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> Miradi Yetu</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Mawasiliano</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> NYUMBANI</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> HUDUMA ZETU</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> KUHUSU SISI</a></li>
+                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> MIRADI YETU</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> MAWASILIANO</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
-                    <h4>Mawasiliano</h4>
+                    <h4>MAWASILIANO</h4>
                     <p><i class="fas fa-map-marker-alt"></i> Chanika, Dar es Salaam</p>
                     <p><i class="fas fa-phone"></i> 0786 463 020</p>
                     <p><i class="fab fa-whatsapp"></i> 0754 616 660</p>
                     <p><i class="fas fa-envelope"></i> info@mulisaconstruction.com</p>
                     
                     <div style="margin-top: 35px;">
-                        <h4>Ramani ya Eneo</h4>
+                        <h4>RAMANI YA ENEO</h4>
                         <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <p style="font-size: 1rem; margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Tupo karibu na Chanika Secondary School</p>
                             <div style="height: 180px; background: rgba(255,255,255,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-top: 15px;">
-                                <p style="color: rgba(255,255,255,0.8);">Ramani itawekwa hapa</p>
+                                <p style="color: rgba(255,255,255,0.8);">RAMANI ITAWEKWA HAPA</p>
                             </div>
                         </div>
                     </div>
@@ -2022,7 +2068,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> Mulisa Construction. Haki zote zimehifadhiwa. | Chanika, Dar es Salaam, Tanzania</p>
+                <p>&copy; <span id="currentYear"></span> MULISA CONSTRUCTION. HAKI ZOTE ZIMEHIFADHIWA. | CHANIKA, DAR ES SALAAM, TANZANIA</p>
             </div>
         </div>
     </footer>
@@ -2034,18 +2080,32 @@
 
     <!-- JavaScript -->
     <script>
-        // Loading Screen - HARAKA SANA
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loader');
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                loader.style.visibility = 'hidden';
+        // Loading Screen with Percentage Counter 1-100%
+        let percentage = 0;
+        const percentageElement = document.getElementById('percentage');
+        const progressFill = document.getElementById('progressFill');
+        
+        // Simulate loading progress
+        const loadingInterval = setInterval(() => {
+            percentage += 1;
+            percentageElement.textContent = percentage + '%';
+            progressFill.style.width = percentage + '%';
+            
+            if (percentage >= 100) {
+                clearInterval(loadingInterval);
                 
+                // Hide loader after reaching 100%
                 setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 300);
-            }, 500);
-        });
+                    const loader = document.getElementById('loader');
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                    
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
+            }
+        }, 20); // Loads in 2 seconds (100 * 20ms)
 
         // Navigation Mobile
         const hamburger = document.getElementById('hamburger');
