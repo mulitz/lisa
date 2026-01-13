@@ -2,7 +2,8 @@
 <html lang="sw">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <!-- BADILIKO LA KWANZA: Viewport tag mpya -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>MULISA CONSTRUCTION | UJENZI BORA TANZANIA - CHANIKA, DAR ES SALAAM</title>
     <meta name="description" content="WATALAM WA UJENZI TANZANIA. HUDUMA ZA PVA SKIMMING, UJENZI MAJENGO, GYPSUM DESIGNS, TILES INSTALLATION, ELECTRICAL WORKS NA TV SHOWCASE DESIGNS.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -228,6 +229,25 @@
             to { 
                 clip-path: inset(0 0 0 0);
                 opacity: 1;
+            }
+        }
+
+        /* ANIMATION MPYA YA KUBADILISHA RANGI - KUTOKA EAEA GLOBAL */
+        @keyframes colorChange {
+            0% { color: #d4af37; }
+            25% { color: #2d7dd2; }
+            50% { color: #25D366; }
+            75% { color: #EA4335; }
+            100% { color: #d4af37; }
+        }
+
+        /* ANIMATION MPYA YA GLOW - KUTOKA EAEA GLOBAL */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px var(--secondary), 0 0 10px var(--secondary);
+            }
+            to {
+                text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--accent);
             }
         }
 
@@ -1350,7 +1370,50 @@
             animation: none;
         }
 
+        /* ===== MAP SECTION ===== */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 15px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ===== WEBSITE DEVELOPER CREDIT - KUTOKA EAEA GLOBAL ===== */
+        /* IMEBADILISHWA KWA MULISA CONSTRUCTION */
+        .developer {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .developer-text {
+            color: white;
+        }
+
+        .developer-name {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .developer-name:hover {
+            color: var(--accent);
+            animation: none;
+            text-shadow: 0 0 15px var(--accent), 0 0 25px var(--accent);
+        }
+
         /* ===== RESPONSIVE DESIGN - MABADILIKO MADOGO TU ===== */
+        /* UKUBWA WA DESKTOP - HAKUNA MABADILIKO */
         @media (max-width: 1200px) {
             .container {
                 max-width: 95%;
@@ -1488,6 +1551,10 @@
             .service-card:hover, .project-card:hover {
                 transform: none;
             }
+            
+            .map-container {
+                height: 300px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1575,6 +1642,14 @@
             .footer-logo p, .footer-contact p, .footer-newsletter p {
                 font-size: 1rem;
             }
+            
+            .map-container {
+                height: 250px;
+            }
+            
+            .developer-name {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 400px) {
@@ -1615,6 +1690,10 @@
             .experience-badge .text {
                 font-size: 0.8rem;
             }
+            
+            .map-container {
+                height: 200px;
+            }
         }
 
         /* KUWEKA VITABU VYOTE VINAVYOONEKANA KWA SIMU */
@@ -1650,6 +1729,125 @@
             .btn-secondary,
             .btn-whatsapp {
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+        }
+        
+        /* BADILIKO LA MWISHO: CSS MPYA KWA SIMU - KUSAHIHISHA SCALE */
+        @media (max-width: 768px) {
+            body {
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+                overflow-x: hidden;
+            }
+            
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+            }
+            
+            .container {
+                max-width: 100% !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                overflow-x: hidden;
+            }
+            
+            /* Scale ya maandishi */
+            h1, .hero-content h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.3 !important;
+                word-wrap: break-word;
+            }
+            
+            h2, .section-header h2 {
+                font-size: 1.6rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            h3 {
+                font-size: 1.4rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            .hero-content p, p, .section-header p, .service-card p {
+                font-size: 0.95rem !important;
+                line-height: 1.5 !important;
+                word-wrap: break-word;
+            }
+            
+            .btn {
+                font-size: 0.9rem !important;
+                padding: 12px 20px !important;
+                white-space: normal;
+                text-align: center;
+            }
+            
+            /* Hakikisha hakuna kitu kinapita width */
+            img, .service-img, .project-img, .logo-img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Punguza margins na padding */
+            section {
+                padding: 40px 0 !important;
+            }
+            
+            .hero {
+                min-height: auto !important;
+                height: auto !important;
+                padding: 120px 0 40px !important;
+            }
+            
+            /* Grids kwa simu ziwe moja kwa moja */
+            .services-grid,
+            .gallery-grid,
+            .features-grid,
+            .stats-container {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            /* Fanya fomu iwe rahisi */
+            .form-control {
+                padding: 14px 18px !important;
+                font-size: 1rem !important;
+            }
+            
+            /* Hakikisha navigation inaonekana vizuri */
+            .nav-link {
+                font-size: 1rem !important;
+                padding: 12px !important;
+            }
+            
+            /* Punguza mapambo yasiyo ya lazima kwa simu */
+            .sliding-text-container {
+                display: none;
+            }
+            
+            .construction-tools {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.6rem !important;
+            }
+            
+            .section-header h2 {
+                font-size: 1.4rem !important;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem !important;
+            }
+            
+            .logo-text .company-name {
+                font-size: 1.1rem !important;
             }
         }
     </style>
@@ -2195,10 +2393,10 @@
                     <h3>MULISA CONSTRUCTION</h3>
                     <p>Wataalam wa ujenzi na ukarabati wa nyumba na majengo ya biashara nchini Tanzania.</p>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/mulisa_construction" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/mulisa_construction" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/255754616660" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/mulisa_construction" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
@@ -2224,8 +2422,16 @@
                         <h4>RAMANI YA ENEO</h4>
                         <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 15px;">
                             <p style="font-size: 1rem; margin-bottom: 10px;"><i class="fas fa-info-circle"></i> Tupo karibu na Chanika Secondary School</p>
-                            <div style="height: 180px; background: rgba(255,255,255,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-top: 15px;">
-                                <p style="color: rgba(255,255,255,0.8);">RAMANI ITAWEKWA HAPA</p>
+                            
+                            <!-- GOOGLE MAP - CHANIKA, DAR ES SALAAM -->
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.078052516717!2d39.215561!3d-6.872311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4e3a1c7b7a5f%3A0x8b9e8a7b8c8d8e8f!2sChanika%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2stz!4v1690000000000!5m2!1sen!2stz" 
+                                    class="map-frame" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
                             </div>
                         </div>
                     </div>
@@ -2234,6 +2440,12 @@
             
             <div class="copyright">
                 <p>&copy; <span id="currentYear"></span> MULISA CONSTRUCTION. HAKI ZOTE ZIMEHIFADHIWA. | CHANIKA, DAR ES SALAAM, TANZANIA</p>
+                
+                <!-- WEBSITE DEVELOPER CREDIT - KUTOKA EAEA GLOBAL -->
+                <p class="developer">
+                    <span class="developer-text">Developed by </span>
+                    <a href="https://instagram.com/matomediatz" target="_blank" class="developer-name">MATO MEDIA TZ</a>
+                </p>
             </div>
         </div>
     </footer>
