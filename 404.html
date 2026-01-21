@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukurasa Haupatikani - MULISA CONSTRUCTION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --primary: #1a365d;
+            --primary-dark: #0d2342;
+            --secondary: #d4af37;
+            --secondary-dark: #b8941f;
+            --accent: #2d7dd2;
+            --accent-light: #4a9ee7;
+            --light: #f8fafc;
+            --light-gray: #e2e8f0;
+            --dark: #2d3748;
+            --gray: #718096;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: #fefefe;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            75% { transform: translateY(-8px) rotate(-2deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes hammer {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: white;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .company-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* ===== 404 CONTENT ===== */
+        .error-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .error-container {
+            max-width: 700px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .error-icon {
+            font-size: 8rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-size: 6rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .error-subtitle {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .construction-tools-404 {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .tool-404 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .hammer-404 {
+            animation-name: hammer;
+        }
+
+        .brick-404 {
+            animation-name: float;
+            animation-delay: 0.5s;
+        }
+
+        .ruler-404 {
+            animation-name: pulse;
+            animation-delay: 1s;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: var(--border-radius-sm);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 3px solid var(--primary);
+            font-weight: 800;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        /* ===== QUICK LINKS ===== */
+        .quick-links {
+            margin-top: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .quick-links h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .link-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .link-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .link-text h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .link-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        .footer-contact i {
+            color: var(--secondary);
+            width: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .error-title {
+                font-size: 4rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1.8rem;
+            }
+            
+            .error-icon {
+                font-size: 6rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .construction-tools-404 {
+                gap: 20px;
+            }
+            
+            .tool-404 {
+                font-size: 2rem;
+            }
+            
+            .quick-links {
+                padding: 25px;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-title {
+                font-size: 3rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .error-icon {
+                font-size: 5rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+            
+            .logo-text .company-name {
+                font-size: 1.3rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="logo.png" alt="MULISA CONSTRUCTION LOGO" class="logo-img" onerror="this.src='https://via.placeholder.com/60x60/1a365d/ffffff?text=MC'">
+                    <div class="logo-text">
+                        <div class="company-name">MULISA CONSTRUCTION</div>
+                        <div class="tagline">UBORA KATIKA KILA KITU</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 Error Content -->
+    <main class="error-content">
+        <div class="container">
+            <div class="error-container">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                
+                <h1 class="error-title">404</h1>
+                <h2 class="error-subtitle">UKURASA HAUPATIKANI</h2>
+                
+                <p class="error-message">
+                    Samahani, ukurasa unaoutafuta haupatikani. Huenda umeandika anuani isiyo sahihi au ukurasa umesitishwa kuwa.
+                    Unaweza kurudi nyumbani au kutumia viungo hapa chini kupata unachotafuta.
+                </p>
+                
+                <div class="construction-tools-404">
+                    <div class="tool-404 hammer-404">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <div class="tool-404 brick-404">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="tool-404 ruler-404">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-home"></i> RUDI NYUMBANI
+                    </a>
+                    <a href="index.html#contact" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> WASILIANA NASI
+                    </a>
+                    <a href="https://wa.me/255754616660" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WHATSAPP
+                    </a>
+                </div>
+                
+                <div class="quick-links">
+                    <h3>VIUNGO VYA HARAKA</h3>
+                    <div class="links-grid">
+                        <a href="index.html#services" class="link-item">
+                            <div class="link-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="link-text">
+                                <h4>HUDUMA ZETU</h4>
+                                <p>Angalia huduma zote za ujenzi tunazotoa</p>
+                            </div>
+                        </a>
+                        
+                        <a href="index.html#projects" class="link-item">
+                            <div class="link-icon">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <div class="link-text">
+                                <h4>MIRADI YETU</h4>
+                                <p>Tazama miradi tuliyoifanya na kujivunia</p>
+                            </div>
+                        </a>
+                        
+                        <a href="index.html#about" class="link-item">
+                            <div class="link-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="link-text">
+                                <h4>KUHUSU SISI</h4>
+                                <p>Jua zaidi kuhusu kampuni yetu na uzoefu wetu</p>
+                            </div>
+                        </a>
+                        
+                        <a href="index.html#contact" class="link-item">
+                            <div class="link-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="link-text">
+                                <h4>MAWASILIANO</h4>
+                                <p>Piga simu au tuma ujumbe kwetu</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="MULISA CONSTRUCTION" onerror="this.src='https://via.placeholder.com/60x60/1a365d/ffffff?text=MC'">
+                    <h3>MULISA CONSTRUCTION</h3>
+                    <p>Wataalam wa ujenzi na ukarabati wa nyumba na majengo ya biashara nchini Tanzania.</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Chanika, Dar es Salaam</p>
+                    <p><i class="fas fa-phone"></i> 0786 463 020</p>
+                    <p><i class="fab fa-whatsapp"></i> 0754 616 660</p>
+                    <p><i class="fas fa-envelope"></i> info@mulisaconstruction.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> MULISA CONSTRUCTION. HAKI ZOTE ZIMEHIFADHIWA. | CHANIKA, DAR ES SALAAM, TANZANIA</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href.startsWith('#') && href !== '#') {
+                    e.preventDefault();
+                    
+                    // If we're on 404 page, redirect to index.html first
+                    if (window.location.pathname.includes('404.html')) {
+                        window.location.href = 'index.html' + href;
+                    } else {
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Show helpful message if user tries to go back
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                // Page was loaded from cache
+                console.log('Page loaded from cache');
+            }
+        });
+    </script>
+</body>
+</html>
